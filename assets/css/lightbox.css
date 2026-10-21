@@ -1,0 +1,30 @@
+/* Project card hover (as in the video) */
+.project-info small { transition: background .25s; }
+.project-card:hover .project-info small { background: #e05a2b; }
+.project-actions span { transition: transform .2s; }
+.project-actions span:first-child { cursor: pointer; }
+.project-actions span:hover { transform: scale(1.1); }
+
+/* Lightbox */
+body.lb-lock { overflow: hidden; }
+.lb {
+  position: fixed; inset: 0; z-index: 3000; background: rgba(12, 14, 18, .94);
+  display: none; align-items: center; justify-content: center;
+}
+.lb.open { display: flex; }
+.lb-stage { max-width: 78vw; text-align: left; }
+.lb-img {
+  display: block; max-width: 78vw; max-height: 72vh; background: #222;
+  opacity: 0; transform: scale(.97); transition: opacity .3s, transform .3s;
+}
+.lb-img.in { opacity: 1; transform: scale(1); }
+.lb-caption { background: #fff; color: #333; font-size: .85rem; padding: 12px 16px; }
+.lb-close, .lb-nav {
+  position: absolute; background: transparent; border: 0; color: rgba(255,255,255,.75);
+  cursor: pointer; transition: color .2s;
+}
+.lb-close:hover, .lb-nav:hover { color: #fff; }
+.lb-close { top: 18px; right: 24px; font-size: 1.3rem; }
+.lb-nav { top: 50%; transform: translateY(-50%); font-size: 1.6rem; padding: 12px; }
+.lb-prev { left: 18px; }
+.lb-next { right: 18px; }
